@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>MainActivity2.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity2.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.myapplication</span>
+
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.widget.FrameLayout</span>
+<span class="s1">import androidx.fragment.app.Fragment</span>
+<span class="s1">import androidx.fragment.app.FragmentTransaction</span>
+<span class="s1">import com.google.android.material.bottomnavigation.BottomNavigationView</span>
+
+<span class="s0">class </span><span class="s1">MainActivity2 : AppCompatActivity() {</span>
+    <span class="s1">private </span><span class="s0">var </span><span class="s1">Bottomnavi:BottomNavigationView?=</span><span class="s0">null</span>
+    <span class="s1">private </span><span class="s0">var </span><span class="s1">FrameLayout:FrameLayout?=</span><span class="s0">null</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_main2)</span>
+        <span class="s1">connectviews()</span>
+        <span class="s1">Bottomnaviclick()</span>
+    <span class="s1">}</span>
+    <span class="s1">private </span><span class="s0">fun </span><span class="s1">connectviews(){</span>
+        <span class="s1">Bottomnavi=findViewById(R.id.bottomnav)</span>
+        <span class="s1">FrameLayout=findViewById(R.id.frameco)</span>
+    <span class="s1">}</span>
+    <span class="s1">private </span><span class="s0">fun </span><span class="s1">Bottomnaviclick(){</span>
+        <span class="s1">Bottomnavi?.setOnItemSelectedListener {</span>
+            <span class="s0">when</span><span class="s1">(it.itemId){</span>
+                <span class="s1">R.id.addquestion -&gt;{</span>
+                    <span class="s1">choosefragment(addFragment()</span><span class="s0">,</span><span class="s2">&quot;addquestion&quot;</span><span class="s1">)</span>
+                <span class="s1">}</span>
+                <span class="s1">R.id.officehoure -&gt;{</span>
+                    <span class="s1">choosefragment(officeFragment()</span><span class="s0">,</span><span class="s2">&quot;officehouers&quot;</span><span class="s1">)</span>
+                <span class="s1">}</span>
+                <span class="s1">R.id.profile -&gt;{</span>
+                    <span class="s1">choosefragment(profileFragment()</span><span class="s0">,</span><span class="s2">&quot;profile&quot;</span><span class="s1">)</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+           <span class="s0">true</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s1">private </span><span class="s0">fun </span><span class="s1">choosefragment(fragment:Fragment</span><span class="s0">,</span><span class="s1">tag:String){</span>
+        <span class="s0">val </span><span class="s1">FragmentTransaction:FragmentTransaction = supportFragmentManager.beginTransaction()</span>
+        <span class="s1">FragmentTransaction.replace(R.id.frameco</span><span class="s0">,</span><span class="s1">fragment</span><span class="s0">,</span><span class="s1">tag)</span>
+        <span class="s1">FragmentTransaction.addToBackStack(tag)</span>
+        <span class="s1">FragmentTransaction.commit()</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

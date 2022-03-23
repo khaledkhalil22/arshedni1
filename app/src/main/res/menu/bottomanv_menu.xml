@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/addquestion"
+    android:title="addquestions"
+    android:icon="@drawable/ic_baseline_addquestion_24"/>
+    <item
+        android:id="@+id/officehoure"
+        android:title="officehoure"
+        android:icon="@drawable/ic_baseline_officehoure_filled_24"/>
+    <item
+        android:id="@+id/profile"
+        android:title="profile"
+        android:icon="@drawable/ic_baseline_profile_24"/>
+
+</menu>
